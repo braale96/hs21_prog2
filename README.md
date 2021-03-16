@@ -2,7 +2,7 @@ PROG02 _ Projektidee:
 
 "Der Wunschender"
 
-Inspired by: 
+*Inspired by:*
 ![wishender_inspiration](bilder/rachel-kong-wish-ender.jpg)
 
 
