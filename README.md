@@ -3,7 +3,7 @@ PROG02 _ Projektidee:
 "Der Wunschender"
 
 Inspired by: 
-< img src=bidler/rachel-kong-wish-ender.jpg width="100px" >
+< img src=bidler/rachel-kong-wish-ender.jpg width="100px"/>
 
 [14.3.21]Eine Applikation welche eine Wunschliste generieren und diese mit Freunden & Familie teilen kann.
 Der Benutzer soll einerseits eine eigene Liste erstellen können und gleichzeitig geteilte Liste einsehen können.
