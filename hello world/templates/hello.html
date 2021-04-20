@@ -2,11 +2,20 @@
 <html lang="de">
 <head>
     <meta charset="utf-8">
-    <title>Hello</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <title>Eintrag</title>
+    <link rel="stylesheet"
+          href="../static/main.css"/>
+
 </head>
 <body>
-    <h1>Hallo {{ name }}!</h1>
-    <a href="{{ url_for('test')}}">Test</a>
+
+    <h1>THE WISHENDER</h1>
+
+    <form method="POST">
+        <p><input type="text" name="vorname" placeholder="Bitte geben Sie Ihren Namen ein"></p>
+        <p><input type="text" name="link" placeholder="Bitte geben Sie eine URL ein"></p>
+        <button class="example_e" >Zur Liste hinzufügen</button>
+    </form>
+
 </body>
 </html>
