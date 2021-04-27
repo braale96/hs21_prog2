@@ -1,0 +1,165 @@
+h1 {
+    margin-left: 25px;
+    margin-top: 25px;
+    color: black;
+    font-style: normal;
+    font-family: Barlow;
+}
+
+h2 {
+    margin-left: 25px;
+    margin-top: 25px;
+    color: black;
+    font-weight: 350;
+    font-style: italic;
+    font-family: Barlow;
+}
+
+h3 {
+    margin-left: 25px;
+    margin-top: 5px;
+    color: black;
+    font-style: initial;
+    font-family: Barlow;
+    font-weight: 200
+}
+
+h4 {
+    margin-left: 33px;
+    margin-top: 35px;
+    color: black;
+    font-style: initial;
+    font-family: Barlow;
+    font-weight: 400
+}
+
+ul.produkt{
+    list-style-type: none;
+    padding-left: 30px;
+    font-family: Barlow;
+    font-weight: 700
+}
+ul.url{
+    list-style-type: none;
+    padding-left: 15px;
+    font-family: Barlow;
+    font-weight: 80
+
+}
+
+.welcome {
+    width: 400px;
+    text-align: justify;
+
+}
+
+input {
+    margin-left: 25px;
+    color: white;
+    background-color: black;
+    padding: 5px;
+    border-radius: 6px;
+    border-style: solid;
+    border-color: black;
+    height: 30px;
+    width: 250px;
+}
+
+input:hover {
+    margin-left: 25px;
+    border-color: black;
+    color: black;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.inputs {
+    font-family: Barlow;
+    margin-left: 25px;
+    color: white;
+    background-color: black;
+    border-radius: 6px;
+    border-style: solid;
+    border-color: black;
+    height: 25px;
+    width: 175px;
+}
+
+.example_a {
+    font-family: Barlow;
+    margin-left: 23px;
+    letter-spacing: 1px;
+    border: none;
+    background: white;
+    color: gray;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+.example_a:hover {
+    margin-left: 23px;
+    color: black;
+    font-weight: 700;
+    letter-spacing: 5px;
+    transition: all 0.3s ease 0s;
+}
+
+.example_b {
+    font-family: Barlow;
+    margin-left: 24px;
+    letter-spacing: 3.7px;
+    border: none;
+    background: white;
+    color: gray !important;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+.example_b:hover {
+    margin-left: 24px;
+    color: black !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+    transition: all 0.3s ease 0s;
+}
+
+.example_e {
+    font-family: Barlow;
+    margin-left: 20px;
+    border: none;
+    background: white;
+    color: gray !important;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+.example_e:hover {
+    margin-left: 20px;
+    color: black !important;
+    background: none;
+    font-weight: 700 !important;
+    letter-spacing: 6px;
+    transition: all 0.3s ease 0s;
+}
+
+.reset {
+    font-family: Barlow;
+    position: absolute;
+    margin-left: 28px;
+    border: none;
+    background: white;
+    color: gray;
+    transition: all 0.3s ease 0s;
+}
+
+.reset:hover {
+    font-family: Barlow;
+    position: absolute;
+    margin-left: 28px;
+    border: none;
+    font-weight: 700;
+    background: white;
+    color: red;
+    transition: all 0.3s ease 0s;
+}
