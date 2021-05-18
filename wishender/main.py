@@ -1,16 +1,22 @@
-from flask import Flask
-from flask import render_template
-from flask import request
+from flask import Flask, render_template, request
+import json
+import daten
+
 
 app = Flask("Wishender")
 
-@app.route("/start/", methods=['GET', 'POST'])
-def hallo():
+
+@app.route("/home", methods=['GET', 'POST'])
+
+def liste_erstellen():
     if request.method == 'POST':
-        ziel_person = request.form['Liste']
-        rueckgabe_string = ziel_person + ":"
-        return rueckgabe_string
+        key = request.form["liste"]
+        eintrag = request.form["liste"]
+        eintrag = daten.save_list(key, eintrag)
+        print(eintrag)
+        return "test erfolgreich"
     return render_template("start.html")
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+

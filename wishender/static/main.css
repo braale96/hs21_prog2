@@ -30,7 +30,7 @@ h4 {
     color: black;
     font-style: initial;
     font-family: Barlow;
-    font-weight: 400
+    font-weight: 400;
 }
 
 ul.produkt{
@@ -39,7 +39,7 @@ ul.produkt{
     font-family: Barlow;
     font-weight: 700
 }
-ul.url{
+ul.preis{
     list-style-type: none;
     padding-left: 15px;
     font-family: Barlow;
@@ -162,4 +162,17 @@ input:hover {
     background: white;
     color: red;
     transition: all 0.3s ease 0s;
+}
+
+.footer {
+     font-family: Barlow;
+     position: fixed;
+     bottom: 12px;
+     right: 15px;
+}
+
+.schrift_standard {
+    font-family: Barlow;
+    font-weight: 500;
+    color: black
 }
