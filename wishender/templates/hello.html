@@ -10,55 +10,19 @@
 <body>
 
     <h1>THE WISHENDER</h1>
-    <h2> Name der Liste </h2>
-
-    <form method="POST">
-        <p class = schrift_standard>
-            <input class = schrift_standard type="text" name="produkt" placeholder="Bitte geben Sie den Produktenamen ein"> PRODUKT </p>
-        <p class = schrift_standard>
-            <input class = schrift_standard type="text" name="link" placeholder="Bitte geben Sie den Preis in CHF ein"> CHF</p>
-        <button class="example_e" >Zur Liste hinzufügen</button>
-    </form>
+    <h2> Ihre Wunschlisten </h2>
     <br/>
-    <!-- <ul class="produkt">
-        <li>PRODUKT 01
-            <ul class="preis">
-                <li>Preis</li>
-            </ul>
-        </li>
-        <br/>
-        <li>PRODUKT 02
-            <ul class="preis">
-                <li>Preis</li>
-            </ul>
-        </li>
-        <br/>
-        <li>PRODUKT 03
-            <ul class="preis">
-                <li>Preis</li>
-            </ul>
-        </li>
-    </ul> -->
 
-    <ul class="produkt">
-        <li>{{PRODUKT 01}}
-            <ul class="preis">
-                <li>{{Preis}}</li>
-            </ul>
-        </li>
-        <br/>
-        <li>{{PRODUKT 02}}
-            <ul class="preis">
-                <li>{{Preis}}</li>
-            </ul>
-        </li>
-        <br/>
-        <li>{{PRODUKT 03}}
-            <ul class="preis">
-                <li>{{Preis}}</li>
-            </ul>
-        </li>
+    <ul>
+        {% for key1, list in listen.items() %}
+            <ul class="wunschliste">{{ key1 }}</ul>
+            {% for key2, wunsch in list.items()%}
+                <li class="wuensche"> {{key2}}: {{ wunsch }}</li>
+            {% endfor %}
+        {% endfor %}
     </ul>
+
+    <br/>
 
 </body>
 

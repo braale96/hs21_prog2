@@ -1,8 +1,21 @@
 {
-    "liste_x": {
-        "liste": "blabla"
+    "Test": {
+        "1. Wunsch": "Buch"
     },
-    "test": {
-        "liste": "test"
+    "Testen": {
+        "1. Wunsch": "Ball",
+        "2. Wunsch": "Hund"
+    },
+    "Alex": {
+        "1. Wunsch": "Ball",
+        "2. Wunsch": "Buch"
+    },
+    "FC BASEL 1893": {
+        "1. Wunsch": "Meistertitel",
+        "2. Wunsch": "Cupsieg"
+    },
+    "Linda": {
+        "1. Wunsch": "Ring",
+        "2. Wunsch": "Kopfh\u00f6rer"
     }
 }
