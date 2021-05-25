@@ -2,10 +2,6 @@
     "Test": {
         "1. Wunsch": "Buch"
     },
-    "Testen": {
-        "1. Wunsch": "Ball",
-        "2. Wunsch": "Hund"
-    },
     "Alex": {
         "1. Wunsch": "Ball",
         "2. Wunsch": "Buch"
@@ -17,5 +13,12 @@
     "Linda": {
         "1. Wunsch": "Ring",
         "2. Wunsch": "Kopfh\u00f6rer"
+    },
+    "Das": {
+        "1. Wunsch": "Ist ",
+        "2. Wunsch": "ein",
+        "3. Wunsch": "guter",
+        "4. Wunsch": "Test"
     }
+
 }

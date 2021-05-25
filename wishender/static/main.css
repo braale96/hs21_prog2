@@ -39,9 +39,11 @@ h4 {
 
 }
 
-input {
+input, label {
+    font-family: Barlow;
+    font-size: small;
     margin-left: 25px;
-    color: white;
+    color: gray;
     background-color: black;
     padding: 5px;
     border-radius: 6px;
@@ -51,7 +53,9 @@ input {
     width: 300px;
 }
 
-input:hover {
+input:hover, label:hover {
+    font-family: Barlow;
+    font-size: small;
     margin-left: 25px;
     border-color: black;
     color: black;
@@ -190,8 +194,9 @@ li.wuensche {
     font-weight: 300;
 }
 
-ul {
-
-    margin-left: none;
-
+.selector{
+    color: white;
+    background-color: black;
+    border-color: black;
+    border-radius: none;
 }
