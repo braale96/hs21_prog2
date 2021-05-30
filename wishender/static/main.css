@@ -39,7 +39,7 @@ h4 {
 
 }
 
-input, label {
+.eingaben {
     font-family: Barlow;
     font-size: small;
     margin-left: 25px;
@@ -53,7 +53,7 @@ input, label {
     width: 300px;
 }
 
-input:hover, label:hover {
+.eingaben:hover {
     font-family: Barlow;
     font-size: small;
     margin-left: 25px;
@@ -155,23 +155,6 @@ input:hover, label:hover {
     color: black
 }
 
-.preis{
-    color: white;
-    background-color: black;
-    border-radius: 6px;
-    border-style: solid;
-    border-color: black;
-    height: 35px;
-    width: 100px;
-}
-
-.preis:hover {
-    border-color: black;
-    color: black;
-    background-color: white;
-    border-radius: 6px;
-}
-
 ul.wunschliste {
     list-style-type: none;
     font-family: Barlow;
@@ -184,19 +167,38 @@ ul.wunschliste {
     font-size: x-large;
 }
 
-li.wuensche {
+li.wuensche, ul.wuensche {
     list-style-type: none;
     font-family: Barlow;
-    margin-left: 45px;
+    margin-left: 10px;
     margin-top: 10px;
     color: black;
     font-style: initial;
     font-weight: 300;
+    font-size: medium;
 }
 
 .selector{
-    color: white;
-    background-color: black;
+    font-family: Barlow;
+    font-size: small;
+    border-radius: 6px;
     border-color: black;
-    border-radius: none;
+    color: gray;
+    background: black;
+    margin-left: 25px;
+    height: 48px;
+    width: 313px;
+}
+
+input[type="checkbox"] + label{
+    font-family: Barlow;
+    color: black;
+    font-weight: 350;
+}
+
+input[type="checkbox"]:checked + label{
+    font-family: Barlow;
+    color: gray;
+    text-decoration: line-through;
+    font-weight: 150;
 }

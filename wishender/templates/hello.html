@@ -11,17 +11,17 @@
 
     <h1>THE WISHENDER</h1>
     <h2> Ihre Wunschlisten </h2>
-    <br/>
 
-    <ul>
-        {% for key1, list in listen.items() %}
-            <ul class="wunschliste">{{ key1 }}</ul>
-            {% for key2, wunsch in list.items()%}
-                <li class="wuensche"> {{key2}}: {{ wunsch }}</li>
+    <form>
+    <li class="wuensche">
+        {% for key1, wuensche in listen.items() %}
+            <ul class="wunschliste"> {{ key1 }} </ul>
+            {% for key2, wunsch in wuensche.items()%}
+               <ul class="wuensche"> <input type="checkbox"> <label> {{key2}}: {{ wunsch }} </label> </ul>
             {% endfor %}
         {% endfor %}
-    </ul>
-
+    </li>
+    </form>
     <br/>
 
 </body>

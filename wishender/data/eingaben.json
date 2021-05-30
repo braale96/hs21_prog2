@@ -11,8 +11,10 @@
         "2. Wunsch": "Cupsieg"
     },
     "Linda": {
-        "1. Wunsch": "Ring",
-        "2. Wunsch": "Kopfh\u00f6rer"
+        "1. Wunsch": "Trainerhose",
+        "2. Wunsch": "Badkleid",
+        "3. Wunsch": "Kei Pr\u00fcefig",
+        "4. Wunsch": "Strand (Forte)"
     },
     "Das": {
         "1. Wunsch": "Ist ",
@@ -20,5 +22,4 @@
         "3. Wunsch": "guter",
         "4. Wunsch": "Test"
     }
-
 }

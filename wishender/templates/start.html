@@ -12,24 +12,24 @@
     <h3 class="welcome">Willkommen beim Wishender.
         Erstellen Sie eine Liste und tragen Sie ihre Wünsche ein. </h3>
 
+    <br/>
+
     <form method="GET">
-        <p class="label"> <label for="liste_auswahl">Besteht die Liste bereits?
-    <select id="liste_auswahl" name="liste_auswahl" class="selector">
-            <option value="neutral"></option>
+        <p> <select id="liste_auswahl" name="liste_auswahl" class="selector">
+            <option selected>Besteht die Liste bereits?</option>
             <option value="nein">Nein</option>
-         {% for key, list in listen.items() %}
-            <option value="listen">{{ key }}</option>
-         {% endfor %}
-    </select> </label>
-        </p>
+                {% for key, list in listen.items() %}
+                    <option value="listen">{{ key }}</option>
+                {% endfor %}
+         </select> </p>
         </form>
 
         <form method="POST">
-        <p><input type="text" name="liste" placeholder=" Wie soll die neue Liste heissen?"></p>
-        <p><input type="text" name="wunsch01" placeholder=" Was wünschen Sie sich am meisten?"></p>
-        <p><input type="text" name="wunsch02" placeholder=" Und sonst so?"></p>
-        <p><input type="text" name="wunsch03" placeholder=" Weitere Wünsche?"></p>
-        <p><input type="text" name="wunsch04" placeholder=" Weitere Wünsche?"></p>
+        <p><input type="text" class="eingaben" name="liste" placeholder=" Für wen ist die Liste?"></p>
+        <p><input type="text" class="eingaben" name="wunsch01" placeholder=" Was wünscht sich diese Person am meisten?"></p>
+        <p><input type="text" class="eingaben" name="wunsch02" placeholder=" Und sonst so?"></p>
+        <p><input type="text" class="eingaben" name="wunsch03" placeholder=" Weitere Wünsche?"></p>
+        <p><input type="text" class="eingaben" name="wunsch04" placeholder=" Weitere Wünsche?"></p>
         <button class="example_a" type="submit">Liste erstellen</button>
     </form>
     <br/>
