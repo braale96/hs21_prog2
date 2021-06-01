@@ -14,18 +14,17 @@
 
     <br/>
 
+    <p class ="warnung"> {{ warnung }} </p>
     <form method="GET">
         <p> <select id="liste_auswahl" name="liste_auswahl" class="selector">
             <option selected>Besteht die Liste bereits?</option>
-            <option value="nein">Nein</option>
                 {% for key, list in listen.items() %}
                     <option value="listen">{{ key }}</option>
                 {% endfor %}
          </select> </p>
         </form>
-
         <form method="POST">
-        <p><input type="text" class="eingaben" name="liste" placeholder=" Für wen ist die Liste?"></p>
+        <p><input type="text" class="eingaben" name="liste" placeholder=" Für wen ist die Liste?"> </p>
         <p><input type="text" class="eingaben" name="wunsch01" placeholder=" Was wünscht sich diese Person am meisten?"></p>
         <p><input type="text" class="eingaben" name="wunsch02" placeholder=" Und sonst so?"></p>
         <p><input type="text" class="eingaben" name="wunsch03" placeholder=" Weitere Wünsche?"></p>

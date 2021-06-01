@@ -82,45 +82,6 @@ h4 {
     transition: all 0.3s ease 0s;
 }
 
-.example_b {
-    font-family: Barlow;
-    margin-left: 24px;
-    letter-spacing: 3.7px;
-    border: none;
-    background: white;
-    color: gray !important;
-    text-transform: uppercase;
-    display: inline-block;
-    transition: all 0.3s ease 0s;
-}
-.example_b:hover {
-    margin-left: 24px;
-    color: black !important;
-    font-weight: 700 !important;
-    letter-spacing: 1px;
-    transition: all 0.3s ease 0s;
-}
-
-.example_e {
-    font-family: Barlow;
-    margin-left: 20px;
-    border: none;
-    background: white;
-    color: gray !important;
-    padding-bottom: 15px;
-    text-transform: uppercase;
-    display: inline-block;
-    transition: all 0.3s ease 0s;
-}
-.example_e:hover {
-    margin-left: 20px;
-    color: black !important;
-    background: none;
-    font-weight: 700 !important;
-    letter-spacing: 6px;
-    transition: all 0.3s ease 0s;
-}
-
 .reset {
     font-family: Barlow;
     position: absolute;
@@ -201,4 +162,35 @@ input[type="checkbox"]:checked + label{
     color: gray;
     text-decoration: line-through;
     font-weight: 150;
+}
+
+.warnung {
+    font-family: Barlow;
+    font-size: small;
+    margin-left: 28px;
+}
+
+.check_save {
+    font-family: Barlow;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    background: white;
+    margin-top: 10px;
+    margin-botton: 10px;
+    margin-left: 55px;
+    letter-spacing: 2px;
+    color: gray;
+    font-weight: 150;
+    font-size: medium;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+}
+
+.check_save:hover {
+    color: black;
+    font-weight: 450;
+    letter-spacing: 7px;
+    transition: all 0.3s ease 0s;
 }

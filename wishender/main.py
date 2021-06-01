@@ -1,5 +1,5 @@
 import flask
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request
 import json
 import daten
 
@@ -21,16 +21,14 @@ def liste_erstellen():
         wunsch03 = request.form["wunsch03"]
         wunsch04 = request.form["wunsch04"]
         if key != "":
-            eintrag = daten.save_list(key,
-                                  wunsch01,
-                                  wunsch02,
-                                  wunsch03,
-                                  wunsch04)  # hier wird die funktion "save_list" ausgeführt und in eintrag gespeichert
+            # hier wird die funktion "save_list" ausgeführt und in eintrag gespeichert
+            eintrag = daten.save_list(key, wunsch01, wunsch02, wunsch03, wunsch04)
             print(eintrag)
-            return flask.redirect("/lists")  # hier wird, nach durchlaufen der if-schlaufe auf die neue url weitergeleitet
+            return flask.redirect("/lists")  # hier wird auf die neue url weitergeleitet
         else:
+            warnung = "Bitte einen Listennamen und einen Wunsch Definieren!"
             sachen = sachen_laden()  # hier wird die funktion "sachen_laden" ausgeführt in "sachen" gespeichert
-            return render_template("start.html", listen=sachen)
+            return render_template("start.html", listen=sachen, warnung=warnung)
 
     else:
         sachen = sachen_laden()  # hier wird die funktion "sachen_laden" ausgeführt in "sachen" gespeichert
@@ -38,10 +36,16 @@ def liste_erstellen():
 
 
 @app.route("/lists", methods=['GET', 'POST'])
-def output():
-    sachen = sachen_laden()  # hier wird die funktion "sachen_laden" ausgeführt und der return in "sachen" gespeichert
-    return render_template("hello.html",
-                           listen=sachen)  # "sachen" wird hier für die jinja-logik in "listen" gespeichert
+def liste_abhaken():
+    if request.method == 'POST':
+        checkbox = request.form.getlist("haken")
+        daten.daten_filter(checkbox)
+        sachen = sachen_laden()
+        return render_template("hello.html", checkbox=checkbox, listen=sachen)
+    else:
+        sachen = sachen_laden()  # der return von sachen_laden wird in "sachen" gespeichert
+        return render_template("hello.html",
+                               listen=sachen)  # "sachen" wird hier für die jinja-logik in "listen" gespeichert
 
 
 if __name__ == '__main__':

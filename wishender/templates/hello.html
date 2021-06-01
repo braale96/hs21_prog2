@@ -12,18 +12,24 @@
     <h1>THE WISHENDER</h1>
     <h2> Ihre Wunschlisten </h2>
 
-    <form>
+    <form method="POST">
     <li class="wuensche">
         {% for key1, wuensche in listen.items() %}
             <ul class="wunschliste"> {{ key1 }} </ul>
             {% for key2, wunsch in wuensche.items()%}
-               <ul class="wuensche"> <input type="checkbox"> <label> {{key2}}: {{ wunsch }} </label> </ul>
+                {% if wunsch != "" %} <!-- Sofern der Wunsch nicht leer ist, wird er aufgelistet -->
+                    <ul class="wuensche">
+                        <!--<input type="hidden" name="haken" value="undone"> -->
+                        <input type="checkbox" name="haken" value={{ wunsch }}>
+                        <label> {{key2}}: {{ wunsch }} </label> </ul>
+                {% endif %}
             {% endfor %}
         {% endfor %}
     </li>
+        <button class="check_save" type="submit"> speichern</button>
     </form>
     <br/>
-
+    <p>{{ checkbox }}</p>
 </body>
 
 <footer class="footer">

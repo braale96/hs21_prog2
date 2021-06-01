@@ -1,7 +1,4 @@
 {
-    "Test": {
-        "1. Wunsch": "Buch"
-    },
     "Alex": {
         "1. Wunsch": "Ball",
         "2. Wunsch": "Buch"
@@ -9,12 +6,6 @@
     "FC BASEL 1893": {
         "1. Wunsch": "Meistertitel",
         "2. Wunsch": "Cupsieg"
-    },
-    "Linda": {
-        "1. Wunsch": "Trainerhose",
-        "2. Wunsch": "Badkleid",
-        "3. Wunsch": "Kei Pr\u00fcefig",
-        "4. Wunsch": "Strand (Forte)"
     },
     "Das": {
         "1. Wunsch": "Ist ",
