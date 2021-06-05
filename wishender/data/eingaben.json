@@ -1,16 +1,23 @@
 {
     "Alex": {
-        "1. Wunsch": "Ball",
-        "2. Wunsch": "Buch"
+        "1. Wunsch": "Stift",
+        "2. Wunsch": "Powerbank",
+        "3. Wunsch": "Ball"
     },
     "FC BASEL 1893": {
         "1. Wunsch": "Meistertitel",
         "2. Wunsch": "Cupsieg"
     },
     "Das": {
-        "1. Wunsch": "Ist ",
+        "1. Wunsch": "Ist",
         "2. Wunsch": "ein",
         "3. Wunsch": "guter",
         "4. Wunsch": "Test"
+    },
+    "Testen": {
+        "1. Wunsch": "Das ",
+        "2. Wunsch": "m\u00fcsste",
+        "3. Wunsch": "so",
+        "4. Wunsch": "klappen"
     }
 }

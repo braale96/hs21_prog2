@@ -9,28 +9,42 @@
 <body>
 
     <h1>THE WISHENDER</h1>
-    <h3 class="welcome">Willkommen beim Wishender.
-        Erstellen Sie eine Liste und tragen Sie ihre Wünsche ein. </h3>
+    <h3 class="welcome">Willkommen beim Wishender. Sehen Sie sich bestehende Listen an oder
+       erstellen Sie eine neue Wunschliste und tragen Sie Ihre Wünsche in den gekennzeichneten Felder ein. </h3>
 
     <br/>
 
-    <p class ="warnung"> {{ warnung }} </p>
-    <form method="GET">
-        <p> <select id="liste_auswahl" name="liste_auswahl" class="selector">
+    <form method="POST">
+        <p class="schrift_standard"> <select id="liste_auswahl" name="liste_auswahl" class="selector">
             <option selected>Besteht die Liste bereits?</option>
                 {% for key, list in listen.items() %}
-                    <option value="listen">{{ key }}</option>
+                    <option value="{{ key }}">{{ key }}</option>
                 {% endfor %}
-         </select> </p>
-        </form>
-        <form method="POST">
-        <p><input type="text" class="eingaben" name="liste" placeholder=" Für wen ist die Liste?"> </p>
-        <p><input type="text" class="eingaben" name="wunsch01" placeholder=" Was wünscht sich diese Person am meisten?"></p>
-        <p><input type="text" class="eingaben" name="wunsch02" placeholder=" Und sonst so?"></p>
-        <p><input type="text" class="eingaben" name="wunsch03" placeholder=" Weitere Wünsche?"></p>
-        <p><input type="text" class="eingaben" name="wunsch04" placeholder=" Weitere Wünsche?"></p>
-        <button class="example_a" type="submit">Liste erstellen</button>
+         </select> <button class="example_b" type="submit"> Bestehende Liste anzeigen</button> </p>
+        <p>
+            <ul class="wunschliste"> {{ liste_auswahl }}
+        {% for key1, wuensche in listen.items() %}
+            {% if key1 in liste_auswahl %}
+                {% for key2, wunsch in wuensche.items()%}
+                    {% if wunsch != "" %} <!-- Sofern der Wunsch nicht leer ist, wird er aufgelistet -->
+                        <ul class="wuensche"> {{key2}}: {{ wunsch }} </label> </ul>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+            </ul>
+        </p>
+        <br/>
+        <p class ="warnung"> {{ warnung }} </p>
+
+        <p><input type="text" class="eingaben" name="liste" placeholder=" Neuen Listennamen"> </p>
+        <p><input type="text" class="eingaben" name="wunsch01" placeholder=" Wunsch 1"></p>
+        <p><input type="text" class="eingaben" name="wunsch02" placeholder=" Wunsch 2"></p>
+        <p><input type="text" class="eingaben" name="wunsch03" placeholder=" Wunsch 3"></p>
+        <p><input type="text" class="eingaben" name="wunsch04" placeholder=" Wunsch 4"></p>
+        <button class="example_a" type="submit">Neue Liste erstellen</button>
     </form>
+    <br/>
     <br/>
 
 <footer class="footer">

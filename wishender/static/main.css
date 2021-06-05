@@ -78,10 +78,26 @@ h4 {
     margin-left: 23px;
     color: black;
     font-weight: 700;
-    letter-spacing: 14px;
+    letter-spacing: 8.5px;
     transition: all 0.3s ease 0s;
 }
 
+.example_b {
+    font-family: Barlow;
+    margin-left: 23px;
+    border: none;
+    background: white;
+    color: gray;
+    text-transform: uppercase;
+    display: inline-block;
+
+}
+.example_b:hover {
+    margin-left: 23px;
+    color: black;
+    font-weight: 700;
+
+}
 .reset {
     font-family: Barlow;
     position: absolute;
