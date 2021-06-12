@@ -13,6 +13,7 @@
     <h2> Ihre Wunschlisten </h2>
 
     <form method="POST">
+        <input class="button_c" name="action" type="submit" value="Zur Startseite">
     <li class="wuensche">
         {% for key1, wuensche in listen.items() %}
             <ul class="wunschliste"> {{ key1 }} </ul>
@@ -26,11 +27,12 @@
             {% endfor %}
         {% endfor %}
     </li>
-        <button class="check_save" type="submit"> speichern</button>
+
+        <input class="check_save" name="action" type="submit" value="speichern">
     </form>
     <br/>
     <p>{{ checkbox }}</p>
-    <p>{{ test }}</p>
+    <!--<p>{{ abgehakt }}</p>-->
     <br/>
 </body>
 

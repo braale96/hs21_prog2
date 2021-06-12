@@ -33,6 +33,10 @@ h4 {
     font-weight: 400;
 }
 
+div {
+    display: flex;
+}
+
 .welcome {
     width: 400px;
     text-align: justify;
@@ -63,7 +67,7 @@ h4 {
     border-radius: 6px;
 }
 
-.example_a {
+.button_a {
     font-family: Barlow;
     margin-left: 23px;
     letter-spacing: 1px;
@@ -74,15 +78,13 @@ h4 {
     display: inline-block;
     transition: all 0.3s ease 0s;
 }
-.example_a:hover {
-    margin-left: 23px;
+.button_a:hover {
     color: black;
     font-weight: 700;
     letter-spacing: 8.5px;
-    transition: all 0.3s ease 0s;
 }
 
-.example_b {
+.button_b {
     font-family: Barlow;
     margin-left: 23px;
     border: none;
@@ -92,8 +94,26 @@ h4 {
     display: inline-block;
 
 }
-.example_b:hover {
-    margin-left: 23px;
+.button_b:hover {
+    color: black;
+    font-weight: 700;
+
+}
+
+.button_c {
+    font-family: Barlow;
+    border: none;
+    background: white;
+    color: gray;
+    text-transform: uppercase;
+    display: inline-block;
+    position: fixed;
+    top: 12px;
+    right: 15px;
+
+
+}
+.button_c:hover {
     color: black;
     font-weight: 700;
 
@@ -182,8 +202,9 @@ input[type="checkbox"]:checked + label{
 
 .warnung {
     font-family: Barlow;
+    color: #F1948A;
     font-size: small;
-    margin-left: 28px;
+    margin-left: 27px;
 }
 
 .check_save {

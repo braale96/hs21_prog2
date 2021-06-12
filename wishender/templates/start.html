@@ -6,26 +6,31 @@
     <link rel="stylesheet"
           href="../static/main.css"/>
 </head>
+
+<header>
+    <!--<p> <img src="../bilder/unnamed.png" alt="arrow"> </p> -->
+</header>
 <body>
 
     <h1>THE WISHENDER</h1>
-    <h3 class="welcome">Willkommen beim Wishender. Sehen Sie sich bestehende Listen an oder
+    <div> <h3 class="welcome">Willkommen beim Wishender. Sehen Sie sich bestehende Listen an oder
        erstellen Sie eine neue Wunschliste und tragen Sie Ihre Wünsche in den gekennzeichneten Felder ein. </h3>
+    </div>
 
     <br/>
 
     <form method="POST">
+        <input class="button_c" name="action" type="submit" value="Zu allen Listen">
         <p class="schrift_standard"> <select id="liste_auswahl" name="liste_auswahl" class="selector">
             <option selected>Besteht die Liste bereits?</option>
                 {% for key, list in listen.items() %}
                     <option value="{{ key }}">{{ key }}</option>
                 {% endfor %}
-         </select> <button class="example_b" type="submit"> Bestehende Liste anzeigen</button> </p>
-        <p>
+         </select> <button class="button_b" name="action" type="submit"> Bestehende Liste anzeigen</button>
             <ul class="wunschliste"> {{ liste_auswahl }}
         {% for key1, wuensche in listen.items() %}
             {% if key1 in liste_auswahl %}
-                {% for key2, wunsch in wuensche.items()%}
+                {% for key2, wunsch in wuensche.items() %}
                     {% if wunsch != "" %} <!-- Sofern der Wunsch nicht leer ist, wird er aufgelistet -->
                         <ul class="wuensche"> {{key2}}: {{ wunsch }} </label> </ul>
                     {% endif %}
@@ -42,7 +47,7 @@
         <p><input type="text" class="eingaben" name="wunsch02" placeholder=" Wunsch 2"></p>
         <p><input type="text" class="eingaben" name="wunsch03" placeholder=" Wunsch 3"></p>
         <p><input type="text" class="eingaben" name="wunsch04" placeholder=" Wunsch 4"></p>
-        <button class="example_a" type="submit">Neue Liste erstellen</button>
+        <button class="button_a" name="action" type="submit">Neue Liste erstellen</button>
     </form>
     <br/>
     <br/>

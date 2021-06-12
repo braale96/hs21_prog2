@@ -29,6 +29,8 @@ def wunsch_filter(wuensche):
             for key2, value2 in value.items():
                 if value2 in wuensche:
                     print("Wunsch: " + value2 + " erfüllt")
+                    #content.pop(value2)
+                    #return content
 
     #with open(file, "w") as open_file:
         #json.dump(content, open_file, indent=4)

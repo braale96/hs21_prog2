@@ -16,12 +16,12 @@ def sachen_laden():
 def liste_erstellen():
     if request.method == 'POST':
         listen = request.form["liste_auswahl"]
+        key = request.form["liste"]  # hier wird der listenname als key abgefangen und gespeichert
         if daten.listen_filter(listen) == listen:
             listen_auswahl = daten.listen_filter(listen)
             sachen = sachen_laden()
             return render_template("start.html", liste_auswahl=listen_auswahl, listen=sachen)
-        key = request.form["liste"]  # hier wird der listenname als key abgefangen und gespeichert
-        if key != "":
+        elif key != "":
             wunsch01 = request.form["wunsch01"]  # ab hier werden die wünsche einzeln abgespeichert
             wunsch02 = request.form["wunsch02"]
             wunsch03 = request.form["wunsch03"]
@@ -30,6 +30,8 @@ def liste_erstellen():
             eintrag = daten.save_list(key, wunsch01, wunsch02, wunsch03, wunsch04)
             print(eintrag)
             return flask.redirect("/lists")  # hier wird auf die neue url weitergeleitet
+        elif request.form["action"] == "Zu allen Listen":
+            return flask.redirect("/lists")
         else:
             warnung = "Bitte einen Listennamen und einen Wunsch definieren!"
             sachen = sachen_laden()  # hier wird die funktion "sachen_laden" ausgeführt in "sachen" gespeichert
@@ -44,13 +46,19 @@ def liste_erstellen():
 def liste_abhaken():
     if request.method == 'POST':
         checkbox = request.form.getlist("haken")
-        test = daten.wunsch_filter(checkbox)
-        sachen = sachen_laden()
-        return render_template("hello.html", checkbox=checkbox, listen=sachen, test=test)
+        if checkbox:
+            abgehakt = daten.wunsch_filter(checkbox)
+            sachen = sachen_laden()
+            return render_template("lists.html", checkbox=checkbox, listen=sachen, abgehakt=abgehakt)
+        elif request.form["action"] == "Zur Startseite":
+            return flask.redirect("/home")
+        else:
+            abgehakt = daten.wunsch_filter(checkbox)
+            sachen = sachen_laden()
+            return render_template("lists.html", checkbox=checkbox, listen=sachen, abgehakt=abgehakt)
     else:
         sachen = sachen_laden()  # der return von sachen_laden wird in "sachen" gespeichert
-        return render_template("hello.html",
-                               listen=sachen)  # "sachen" wird hier für die jinja-logik in "listen" gespeichert
+        return render_template("lists.html", listen=sachen)  # "sachen" wird hier für jinja in "listen" gespeichert
 
 
 if __name__ == '__main__':
