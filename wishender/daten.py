@@ -18,22 +18,16 @@ def save_list(key, wunsch01, wunsch02, wunsch03, wunsch04):
         json.dump(content, open_file, indent=4)  # hier werden die gespeicherten daten im file "eingaben.json" abgelegt
 
 
-def wunsch_filter(wuensche):
-    file = "data/eingaben.json"
-
-    with open(file, "r") as open_file:
+def save_checkbox(auswahl):
+    file = "data/checked.json"
+    with open(file) as open_file:
         content = json.loads(open_file.read())
+        for i in auswahl:
+            if i not in content:
+                content[i] = "abgehakt"
 
-        for key, value in content.items():
-            print("Liste:" + key)
-            for key2, value2 in value.items():
-                if value2 in wuensche:
-                    print("Wunsch: " + value2 + " erfüllt")
-                    #content.pop(value2)
-                    #return content
-
-    #with open(file, "w") as open_file:
-        #json.dump(content, open_file, indent=4)
+    with open(file, "w") as open_file:
+        json.dump(content, open_file, indent=4)
 
 
 def listen_filter(liste):

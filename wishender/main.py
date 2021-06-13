@@ -12,6 +12,12 @@ def sachen_laden():
     return sachen
 
 
+def wuensche_laden():
+    with open("data/checked.json") as open_file:
+        checked_wishes = json.load(open_file)  # hier wird der Inhalt des "eingabe.json" in "sachen" gespeichert
+    return checked_wishes
+
+
 @app.route("/home", methods=['GET', 'POST'])
 def liste_erstellen():
     if request.method == 'POST':
@@ -46,19 +52,21 @@ def liste_erstellen():
 def liste_abhaken():
     if request.method == 'POST':
         checkbox = request.form.getlist("haken")
-        if checkbox:
-            abgehakt = daten.wunsch_filter(checkbox)
-            sachen = sachen_laden()
-            return render_template("lists.html", checkbox=checkbox, listen=sachen, abgehakt=abgehakt)
-        elif request.form["action"] == "Zur Startseite":
+        daten.save_checkbox(checkbox)
+        if request.form["action"] == "Zur Startseite":
             return flask.redirect("/home")
-        else:
-            abgehakt = daten.wunsch_filter(checkbox)
+        elif checkbox:
+            erfuellt = wuensche_laden()
             sachen = sachen_laden()
-            return render_template("lists.html", checkbox=checkbox, listen=sachen, abgehakt=abgehakt)
+            return render_template("lists.html", checkbox=checkbox, listen=sachen, erfuellt=erfuellt)
+        else:
+            erfuellt = wuensche_laden()
+            sachen = sachen_laden()
+            return render_template("lists.html", checkbox=checkbox, listen=sachen, erfuellt=erfuellt)
     else:
+        erfuellt = wuensche_laden()
         sachen = sachen_laden()  # der return von sachen_laden wird in "sachen" gespeichert
-        return render_template("lists.html", listen=sachen)  # "sachen" wird hier für jinja in "listen" gespeichert
+        return render_template("lists.html", listen=sachen, erfuellt=erfuellt)  # "sachen" wird hier für jinja in "listen" gespeichert
 
 
 if __name__ == '__main__':

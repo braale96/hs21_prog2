@@ -20,9 +20,13 @@
             {% for key2, wunsch in wuensche.items()%}
                 {% if wunsch != "" %} <!-- Sofern der Wunsch nicht leer ist, wird er aufgelistet -->
                     <ul class="wuensche">
-                        <!--<input type="hidden" name="haken" value="undone"> -->
+                        {% if wunsch in erfuellt %}
+                        <input type="checkbox" name="haken" value={{ wunsch }} checked>
+                        <label> {{key2}}: {{ wunsch }} </label> </ul>
+                        {% else %}
                         <input type="checkbox" name="haken" value={{ wunsch }}>
                         <label> {{key2}}: {{ wunsch }} </label> </ul>
+                        {% endif %}
                 {% endif %}
             {% endfor %}
         {% endfor %}
@@ -31,8 +35,8 @@
         <input class="check_save" name="action" type="submit" value="speichern">
     </form>
     <br/>
-    <p>{{ checkbox }}</p>
-    <!--<p>{{ abgehakt }}</p>-->
+   <!-- <p>{{ checkbox }}</p>
+    <p>{{ erfuellt }}</p> -->
     <br/>
 </body>
 
