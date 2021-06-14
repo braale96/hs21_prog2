@@ -20,11 +20,12 @@ def save_list(key, wunsch01, wunsch02, wunsch03, wunsch04):
 
 def save_checkbox(auswahl):
     file = "data/checked.json"
-    with open(file) as open_file:
+    with open(file, "r") as open_file:
         content = json.loads(open_file.read())
+        content.clear()
         for i in auswahl:
             if i not in content:
-                content[i] = "abgehakt"
+                content[str(i)] = "abgehakt"
 
     with open(file, "w") as open_file:
         json.dump(content, open_file, indent=4)
