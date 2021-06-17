@@ -39,7 +39,7 @@ div {
 
 .welcome {
     width: 400px;
-    text-align: justify;
+    text-align: justify; /* Blocksatz */
 
 }
 
@@ -76,7 +76,7 @@ div {
     color: gray;
     text-transform: uppercase;
     display: inline-block;
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s; /* Übergangsdauer und "smoothness" */
 }
 .button_a:hover {
     color: black;
@@ -103,13 +103,12 @@ div {
 .button_c {
     font-family: Barlow;
     border: none;
-    background: white;
+    background: none;
     color: gray;
     text-transform: uppercase;
-    display: inline-block;
-    position: fixed;
-    top: 12px;
-    right: 15px;
+    position: fixed;  /* auch beim Scrollen immer am selben Ort */
+    top: 21px;
+    right: 47px;
 
 
 }
@@ -117,26 +116,6 @@ div {
     color: black;
     font-weight: 700;
 
-}
-.reset {
-    font-family: Barlow;
-    position: absolute;
-    margin-left: 28px;
-    border: none;
-    background: white;
-    color: gray;
-    transition: all 0.3s ease 0s;
-}
-
-.reset:hover {
-    font-family: Barlow;
-    position: absolute;
-    margin-left: 28px;
-    border: none;
-    font-weight: 700;
-    background: white;
-    color: red;
-    transition: all 0.3s ease 0s;
 }
 
 .footer {
@@ -210,7 +189,6 @@ input[type="checkbox"]:checked + label{
 .check_save {
     font-family: Barlow;
     border-radius: 8px;
-    border-style: solid;
     border-color: black;
     border-width: 1px;
     background: white;
@@ -229,5 +207,28 @@ input[type="checkbox"]:checked + label{
     color: black;
     font-weight: 450;
     letter-spacing: 7px;
-    transition: all 0.3s ease 0s;
 }
+
+.arrow{
+    position: fixed;
+    top: 9px;
+    right: 15px;,
+    width: 70px;
+    height: 70px
+}
+
+.arrow_back{
+    -o-transform: scaleX(-1); /* Pfeil Spiegeln - Info für ältere Browser-Versionen */
+    transform: scaleX(-1);  /* Pfeil Spiegeln */
+    position: fixed;
+    top: 9px;
+    right: 79px;,
+    width: 70px;
+    height: 70px
+}
+
+/*
+QUELLEN
+https://www.fabriziovanmarciano.com/button-styles/#
+http://www.css4you.de/Texteigenschaften/text-decoration.html
+*/

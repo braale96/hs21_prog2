@@ -13,7 +13,7 @@
     <div> <h3 class="welcome">Willkommen beim Wishender. Sehen Sie sich bestehende Listen an oder
        erstellen Sie eine neue Wunschliste und tragen Sie Ihre Wünsche in den gekennzeichneten Felder ein. </h3>
     </div>
-
+    <img class="arrow" src="https://static.vecteezy.com/system/protected/files/001/187/004/vecteezy_arrow_1187004.png">
     <br/>
 
     <form method="POST">
@@ -21,23 +21,23 @@
         <p class="schrift_standard"> <select id="liste_auswahl" name="liste_auswahl" class="selector">
             <option selected>Besteht die Liste bereits?</option>
                 {% for key, list in listen.items() %}
-                    <option value="{{ key }}">{{ key }}</option>
+                    <option value="{{ key }}">{{ key }}</option> <!-- hier werden alle bestehenden Listennamen als Option im Dropdown aufgelistet -->
                 {% endfor %}
          </select> <button class="button_b" name="action" type="submit"> Bestehende Liste anzeigen</button>
             <ul class="wunschliste"> {{ liste_auswahl }}
         {% for key1, wuensche in listen.items() %}
-            {% if key1 in liste_auswahl %}
+            {% if key1 in liste_auswahl %} <!-- hier wird geprüft ob der ausgewählte key auch tatsächlich vorhanden ist. Wenn er vorhand ist (was eigentlich der Fall sein muss) wird dieser und nur dieser key, samt Wünschen angezeigt-->
                 {% for key2, wunsch in wuensche.items() %}
                     {% if wunsch != "" %} <!-- Sofern der Wunsch nicht leer ist, wird er aufgelistet -->
-                        <ul class="wuensche"> {{key2}}: {{ wunsch }} </label> </ul>
+                        <li class="wuensche"> {{key2}}: {{ wunsch }} </li>
                     {% endif %}
                 {% endfor %}
             {% endif %}
         {% endfor %}
             </ul>
-        </p>
+
         <br/>
-        <p class ="warnung"> {{ warnung }} </p>
+        <p class ="warnung"> {{ warnung }} </p> <!-- hier wird, im Fall eines leeren Listennamen, eine Warnung angezeigt -->
 
         <p><input type="text" class="eingaben" name="liste" placeholder=" Neuen Listennamen"> </p>
         <p><input type="text" class="eingaben" name="wunsch01" placeholder=" Wunsch 1"></p>
@@ -55,3 +55,13 @@
 
 </body>
 </html>
+
+<!--
+QUELLEN
+https://jinja.palletsprojects.com/en/3.0.x/templates/
+https://developer.mozilla.org/de/docs/Web/HTML/Element/Input/checkbox
+https://css-tricks.com/almanac/selectors/c/checked/
+https://www.html5canvastutorials.com/blog/2012/06/custom-form-radio-checkbox/
+https://stackoverflow.com/questions/547821/two-submit-buttons-in-one-form
+https://www.w3schools.com/tags/att_input_checked.asp
+-->

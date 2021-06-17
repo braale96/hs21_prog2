@@ -11,31 +11,32 @@
 
     <h1>THE WISHENDER</h1>
     <h2> Ihre Wunschlisten </h2>
-
+    <img class="arrow_back" src="https://static.vecteezy.com/system/protected/files/001/187/004/vecteezy_arrow_1187004.png">
     <form method="POST">
         <input class="button_c" name="action" type="submit" value="Zur Startseite">
-    <li class="wuensche">
+
+    <li class="wuensche"> </li>
         {% for key1, wuensche in listen.items() %}
-            <ul class="wunschliste"> {{ key1 }} </ul>
+            <ul class="wunschliste"> {{ key1 }} </ul> <!-- jeder Listennamen wird hier aufgelistet-->
             {% for key2, wunsch in wuensche.items()%}
                 {% if wunsch != "" %} <!-- Sofern der Wunsch nicht leer ist, wird er aufgelistet -->
                     <ul class="wuensche">
-                        {% if wunsch in erfuellt %}
+                        {% if wunsch in erfuellt %} <!-- wenn der Wunsch in der "erfüllt"-liste ist, wird er abgehakt-->
                             <input type="checkbox" name="haken" value="{{ wunsch }}" checked>
                             <label> {{key2}}: {{ wunsch }} </label> </ul>
-                        {% else %}
+                        {% else %} <!-- ansonsten bleibt der wunsch "aktiv" resp. zu erfüllen -->
                             <input type="checkbox" name="haken" value= "{{ wunsch }}">
                             <label> {{key2}}: {{ wunsch }} </label> </ul>
                         {% endif %}
                 {% endif %}
             {% endfor %}
         {% endfor %}
-    </li>
+
 
         <input class="check_save" name="action" type="submit" value="speichern">
     </form>
     <br/>
-    <!-- <p>{{ checkbox }}</p> hier wird optisch überprüft was abgehakt ist resp. bleiben soll-->
+    <!-- <p>{{ checkbox }}</p> hier wird optisch überprüft was abgehakt ist resp. abgehakt bleiben soll-->
     <br/>
 </body>
 
