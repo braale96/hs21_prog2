@@ -42,4 +42,5 @@ def listen_filter(liste):
             if key in liste:  # sofern der key (aus dem Dropdown Formular) vorhanden ist
                 return key  # wird er zurückgegeben
 
+
 # Funktion ist nicht zwingend notwendig, aber eine Sicherheitsstufe. Der Key sollte aber in jedem Fall vorhanden sein
