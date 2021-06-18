@@ -24,7 +24,7 @@ Nach demselben Verfahren kann auf der Startseite auch eine einzelne Liste durch 
 Die Wunschnummern (1. Wunsch, 2. Wunsch, etc.) sind den Wünschen fix zugeordnet, weshalb es beim Auslassen eines 
 Wunsch-Feldes leider zu Nummerierungsproblemen kommt. 
 
-Der genaue Ablauf ist auch im Flowchart (draw.io) ersichtlich.
+Der genaue Ablauf ist auch im Flowchart (draw.io) am Ende des READ ME ersichtlich.
 
 
 Auf der Wunschlistenübersicht besteht die Option, erfüllte Wünsche via Checkbox dauerhaft abzuhaken. Die abgehakten 
@@ -52,3 +52,4 @@ Zudem wäre die Option einer Preisangabe pro Wunsch noch wertvoll.
 
 Enjoy! 
 
+![](wishender/bilder/wishender.jpg)
